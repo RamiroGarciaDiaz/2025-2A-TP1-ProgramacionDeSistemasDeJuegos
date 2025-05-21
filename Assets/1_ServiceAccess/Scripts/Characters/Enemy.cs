@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Excercise1
@@ -16,18 +15,25 @@ namespace Excercise1
         private void Awake()
             => _logTag = $"{name}({nameof(Enemy).Colored("#555555")}):";
 
+        //se aplico la busqueda por ID 
         protected override void OnEnable()
         {
             base.OnEnable();
-            //TODO: Get the reference to the player.
-            if (_player == null)
+            if (CharacterService.Instance != null && CharacterService.Instance.TryGetCharacter(playerId, out _player))
+            {
+                //encuentra al jugador
+            }
+            else
+            {
                 Debug.LogError($"{_logTag} Player not found!");
+            }
         }
 
         private void Update()
         {
             if (_player == null)
                 return;
+
             var direction = _player.transform.position - transform.position;
             transform.position += direction.normalized * (speed * Time.deltaTime);
         }
