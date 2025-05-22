@@ -8,18 +8,18 @@ namespace Gameplay
         private readonly PlayerStateMachine _stateMachine;
         private bool _canDoubleJump = true;
 
-        //constructor
+        //Builder
         public JumpingState(Character character, PlayerStateMachine stateMachine)
         {
             _character = character;
             _stateMachine = stateMachine;
         }
 
-        //metodos de la interfaz a la cual esta suscrito 
+        //methods of the interface to which it is subscribed 
         public void Enter() { }
         public void Exit() { }
 
-        //metodos aplicados para el cambio de estado
+        //methods applied for the change of state
         public void HandleMove(Vector2 input)
         {
             _character.SetDirection(input.ToHorizontalPlane() * 0.5f);

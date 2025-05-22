@@ -4,7 +4,7 @@ namespace Gameplay
 {
     public interface IPlayerState
     {
-        //en esta interfaz se encuentran los metodos que deben aplicar los diferentes estados 
+        //In this interface are the methods that the different states must apply.
         void Enter();
         void Exit();
         void HandleMove(Vector2 input);

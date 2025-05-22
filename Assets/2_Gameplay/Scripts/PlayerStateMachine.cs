@@ -6,7 +6,7 @@ namespace Gameplay
     {
         private IPlayerState _currentState;
 
-        //metodo para cambiar el estado del player
+        //method to change the player's state
         public void SetState(IPlayerState newState)
         {
             _currentState?.Exit();
@@ -14,7 +14,7 @@ namespace Gameplay
             _currentState.Enter();
         }
 
-        //metodos para manejar las tranciciones de estados 
+        //methods for handling state transitions
         public void HandleMove(Vector2 input) => _currentState?.HandleMove(input);
         public void HandleJump() => _currentState?.HandleJump();
         public void OnCollisionEnter(Collision collision) => _currentState?.OnCollisionEnter(collision);

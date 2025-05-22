@@ -4,12 +4,12 @@ namespace Excercise1
 {
     public class Character : MonoBehaviour, ICharacter
     {
-        //la variable id ahora se puede modificar desde el editor de unity 
+        //The id variable can now be modified from the Unity editor.
         [SerializeField] protected string id;
 
         protected virtual void OnEnable()
         {
-            //ahora se registran automaticamente los personajes con id
+            //Characters with id are now automatically registered
             CharacterService.Instance?.TryAddCharacter(id, this);
         }
 

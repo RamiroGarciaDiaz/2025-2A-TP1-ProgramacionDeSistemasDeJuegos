@@ -7,7 +7,7 @@ namespace Excercise1
     {
         private readonly Dictionary<string, ICharacter> _charactersById = new();
 
-        //lo transforme en singleton para que sea instanciado una sola vez y todos los characters puedan acceder a el mediante la instancia
+        //I transformed it into a singleton so that it is instantiated only once and all characters can access it through the instance
         public static CharacterService Instance { get; private set; }
 
         private void Awake()
@@ -21,7 +21,7 @@ namespace Excercise1
             DontDestroyOnLoad(gameObject);
         }
 
-        //metodos para agregar, quitar y buscar los characters por id 
+        //Methods to add, remove, and search for characters by id 
         public bool TryAddCharacter(string id, ICharacter character)
             => _charactersById.TryAdd(id, character);
 

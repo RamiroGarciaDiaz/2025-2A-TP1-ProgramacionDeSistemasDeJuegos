@@ -7,7 +7,7 @@ namespace Gameplay
         private readonly Character _character;
         private readonly PlayerStateMachine _stateMachine;
 
-        //contructor 
+        //Builder
 
         public GroundedState(Character character, PlayerStateMachine stateMachine)
         {
@@ -15,11 +15,11 @@ namespace Gameplay
             _stateMachine = stateMachine;
         }
 
-        //metodos de la interfaz a la cual esta suscrito 
+        //methods of the interface to which it is subscribed 
         public void Enter() { }
         public void Exit() { }
 
-        //metodos aplicados para el cambio de estado
+        //methods applied for the change of state
         public void HandleMove(Vector2 input)
         {
             _character.SetDirection(input.ToHorizontalPlane());

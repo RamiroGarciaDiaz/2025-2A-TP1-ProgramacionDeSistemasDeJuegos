@@ -15,13 +15,13 @@ namespace Excercise1
         private void Awake()
             => _logTag = $"{name}({nameof(Enemy).Colored("#555555")}):";
 
-        //se aplico la busqueda por ID 
+        //Id search is applied
         protected override void OnEnable()
         {
             base.OnEnable();
             if (CharacterService.Instance != null && CharacterService.Instance.TryGetCharacter(playerId, out _player))
             {
-                //encuentra al jugador
+         
             }
             else
             {

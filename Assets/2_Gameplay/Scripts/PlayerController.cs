@@ -19,7 +19,7 @@
                 _stateMachine.SetState(new GroundedState(_character, _stateMachine));
             }
             
-            //suscripcion a eventos 
+            //event subscriptions 
             private void OnEnable()
             {
                 moveInput.action.performed += OnMove;
@@ -34,7 +34,7 @@
                 jumpInput.action.performed -= OnJump;
             }
             
-            //metodos para controlar el movimiento 
+            //methods to control movement
             private void OnMove(InputAction.CallbackContext ctx)
             {
                 _stateMachine.HandleMove(ctx.ReadValue<Vector2>());
